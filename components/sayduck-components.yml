@@ -1,0 +1,70 @@
+generated: '2026-07-21'
+method: searched
+source: help.sayduck.com 3D Viewer documentation (embed code + API documentation articles)
+name: Sayduck Embeddable 3D/AR Web Components
+summary: >-
+  Sayduck ships its product-visualization surface as browser-native custom
+  elements (Web Components) that are dropped into any ecommerce page and loaded
+  from hosted ES module loaders. Distinct from a client SDK: these are
+  prebuilt, embeddable UI surfaces that render 3D/AR product experiences and
+  expose an in-page JavaScript API via DOM CustomEvents.
+families:
+- family: 3D Viewer / Configurator
+  description: >-
+    Interactive WebGL 3D viewer and configurator embedded as a custom element.
+    Renders a product by UUID in either variants or configurator mode and
+    exposes a rich in-page API (variants, configurator, scene, dynamic
+    material, dynamic TRS, 3D text) once ready.
+  element: sayduck-viewer
+  loader: https://viewer.sayduck.com
+  loader_type: module
+  docs: https://help.sayduck.com/en/article/3d-viewer-api-documentation-1ftbxnx/
+  embed_docs: https://help.sayduck.com/en/article/3d-viewer-embed-code-19bw806/
+  attributes:
+  - name: product
+    required: true
+    description: Product UUID to render.
+  - name: mode
+    required: true
+    description: '"variants" or "configurator".'
+  embed_example: |
+    <div style="min-width:300px;width:100%;height:450px;">
+      <sayduck-viewer product="PRODUCT_UUID" mode="variants"></sayduck-viewer>
+    </div>
+    <script src="https://viewer.sayduck.com" type="module" async></script>
+  api_surface:
+    access_events:
+    - sayduck.api-ready
+    - sayduck.request-api
+    namespaces:
+    - name: variants
+      methods: [setActiveVariant, getVariants]
+    - name: configurator
+      methods: [getConfigurations, setActiveByUuid, getSelectedVariants, getSelectedVariantUuids, disableConfiguration, createPicker, getConfigurationDimensions]
+    - name: scene
+      methods: [update3dViewer, launchWebAr, getQrCodeUrl, toggleDimensions, setCameraAngles, toggleCameraPositions, setActiveCamera, requestScreenshot, takePhoto, toggleLights, toggleAnnotations, selectAnnotation, unselectAnnotation, updateMaterial, getAllMaterialUuids, updateNode, getAllNodeUuids, updateTextNode, updateTextNodeAttributes]
+    lifecycle_events:
+    - sayduck.editor.gltfLoaded
+    - sayduck.viewer.material.updated
+- family: Dynamic USDZ Viewer (iOS AR Quick Look)
+  description: >-
+    Separate embeddable surface for iOS AR Quick Look (USDZ). Dynamically swaps
+    textures/replacements on the USDZ before launching AR. iOS 13+ only.
+  element: sayduck-dynamic-usdz-viewer
+  loader: https://dynamic-usdz-viewer.sayduck.com
+  loader_type: module
+  docs: https://help.sayduck.com/en/article/dynamic-usdz-viewer-r7yavz/
+  attributes:
+  - name: data-product-uuid
+    required: true
+    description: Product UUID.
+  - name: data-viewer-options
+    required: false
+    description: JSON options including launch-on-load, previewUrl, and a replacements[] array for dynamic textures.
+  platform: iOS 13+ (AR Quick Look)
+  lifecycle_events:
+  - sayduck.dynamicUsdzViewer.usdzLoaded
+notes: >-
+  No npm/registry package is published for these components; they are consumed
+  directly from the hosted module loaders above. Legacy variants of both the
+  viewer and configurator are documented separately in the help center.

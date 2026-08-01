@@ -1,0 +1,51 @@
+# Sayduck
+
+> Sayduck is a 3D product visualization platform for ecommerce. Brands turn static
+> product pages into interactive 3D configurators, WebAR try-in-your-space
+> experiences, and virtual product photography. The integration surface is a
+> browser-embedded Web Component (`<sayduck-viewer>`) with an in-page JavaScript
+> API driven by DOM CustomEvents; the platform is backed internally by a GraphQL
+> API. Founded 2012 (Niklas Slotte); independent since 2024 via The Optical
+> Foundry.
+
+## Product & Platform
+- Home: https://www.sayduck.com
+- About the platform: https://www.sayduck.com/about-platform
+- About the company: https://www.sayduck.com/about-us
+- Platform (sign up / log in): https://platform.sayduck.com/
+- Pricing: https://www.sayduck.com/pricing
+- Case studies: https://www.sayduck.com/case-studies
+- Blog: https://www.sayduck.com/blog
+
+## Developer & API
+- Help center / developer docs: https://help.sayduck.com/
+- 3D Viewer API documentation: https://help.sayduck.com/en/article/3d-viewer-api-documentation-1ftbxnx/
+- 3D Viewer embed code: https://help.sayduck.com/en/article/3d-viewer-embed-code-19bw806/
+- Dynamic API examples: https://help.sayduck.com/en/article/3d-viewer-dynamic-api-examples-a903lq/
+- Configurator API examples: https://help.sayduck.com/en/article/3d-viewer-configurator-api-examples-5n9nzu/
+- Dynamic USDZ viewer (iOS AR): https://help.sayduck.com/en/article/dynamic-usdz-viewer-r7yavz/
+- Getting started: https://help.sayduck.com/en/article/getting-started-d0bngy/
+- Viewer module loader: https://viewer.sayduck.com
+- USDZ viewer module loader: https://dynamic-usdz-viewer.sayduck.com
+
+## Integration model
+- Embed: `<sayduck-viewer product="PRODUCT_UUID" mode="variants|configurator">` + `<script src="https://viewer.sayduck.com" type="module" async>`
+- In-page API namespaces: variants, configurator, scene (materials, nodes, cameras, screenshots, WebAR), dynamic material, dynamic TRS, 3D text
+- Handshake events: `sayduck.api-ready`, `sayduck.request-api`
+- Identifiers: UUID per product/variant/configuration/material/node/camera/annotation
+- Auth: viewer embeds a public product UUID (no API key); platform login is account-based
+
+## Releases & lifecycle
+- Public release notes: https://github.com/Sayduck/sayduck-platform-release/releases
+- GitHub organization: https://github.com/Sayduck
+- Legacy surfaces are documented and marked "[Legacy]" in the help center
+
+## Legal & support
+- Terms of Service: https://www.sayduck.com/tos
+- Privacy Policy: https://www.sayduck.com/privacy-policy
+- Support / help center: https://help.sayduck.com/
+- Contact: info@sayduck.com
+
+## Notes
+- No public REST API, no published npm package, no status page, and no
+  security.txt / bug-bounty program were found at enrichment time.

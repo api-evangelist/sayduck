@@ -1,0 +1,29 @@
+generated: '2026-07-21'
+method: searched
+source: github.com/Sayduck/sayduck-platform-release (dated releases + tags); help.sayduck.com legacy articles
+name: Sayduck Platform Lifecycle
+summary: >-
+  Sayduck tracks platform releases publicly on GitHub and marks superseded
+  developer surfaces as "[Legacy]" in its help center. No public status page or
+  formal HTTP deprecation-header (RFC 8594) program was found — the integration
+  surface is a browser Web Component rather than a versioned HTTP API.
+versioning:
+  scheme: Incrementing platform release numbers (e.g. v2.12) with additional repo tags (v4.4.9).
+  changelog: https://github.com/Sayduck/sayduck-platform-release/releases
+  strategy: >-
+    Single continuously-updated hosted viewer/platform; no per-request API
+    version negotiation. Older embed/API surfaces remain documented as legacy.
+deprecation:
+  policy_page: null
+  signal: Help-center articles prefixed "[Legacy]" (Legacy 3D Viewer, Legacy Configurator API, Legacy Dynamic 3D Viewer).
+  legacy_surfaces:
+  - name: '[Legacy] 3D Viewer Documentation'
+    url: https://help.sayduck.com/en/article/legacy-3d-viewer-documentation-o2ys62/
+  - name: '[Legacy] Configurator API'
+    url: https://help.sayduck.com/en/article/legacy-configurator-api-3po2ll/
+  - name: '[Legacy] Dynamic 3D Viewer'
+    url: https://help.sayduck.com/en/article/legacy-dynamic-3d-viewer-qyg58h/
+  sunset_header: not observed
+status_page: null
+sla: null
+support: https://help.sayduck.com/

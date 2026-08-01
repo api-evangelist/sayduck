@@ -1,0 +1,57 @@
+generated: '2026-07-21'
+method: searched
+source: help.sayduck.com 3D Viewer API + embed documentation; Sayduck platform release notes
+name: Sayduck Integration Conventions
+summary: >-
+  Cross-cutting semantics for integrating the Sayduck 3D/AR viewer. Sayduck's
+  public developer surface is a browser-embedded Web Component with an in-page
+  JavaScript API driven by DOM CustomEvents, not a server REST/GraphQL API. A
+  GraphQL API backs the platform internally (referenced in release notes) but is
+  not publicly documented as an integration surface.
+integration_style:
+  primary: Embedded Web Component + in-page JavaScript API
+  transport: Browser DOM CustomEvents (no HTTP request/response for the viewer API)
+  server_api: >-
+    Platform is backed by a GraphQL API (e.g. Dynamic USDZ GraphQL query per
+    release notes); not published as a public developer API.
+identifiers:
+  scheme: UUID (v1-style) for every addressable object
+  entities:
+  - product
+  - variant
+  - configuration
+  - material
+  - node
+  - camera
+  - annotation
+  example: f2d88b70-120a-013a-bcd8-128799098bec
+auth:
+  viewer: >-
+    None. The viewer is embedded with a public product UUID; product visibility
+    is controlled by publish settings in the platform, not by an API key in the
+    embed.
+  platform: Account login at https://platform.sayduck.com/ (Stripe-backed billing portal).
+events:
+  namespace: sayduck.*
+  handshake:
+  - sayduck.api-ready       # detail.instance carries the api object
+  - sayduck.request-api     # dispatch to request the api instance on demand
+  lifecycle:
+  - sayduck.editor.gltfLoaded
+  - sayduck.viewer.material.updated
+  - sayduck.dynamicUsdzViewer.usdzLoaded
+modes:
+  attribute: mode
+  values:
+  - variants
+  - configurator
+async:
+  pattern: Promise-returning methods (e.g. scene.requestScreenshot() resolves to a data URL).
+versioning:
+  see: lifecycle/sayduck-lifecycle.yml
+  note: Legacy viewer/configurator surfaces are documented and marked "[Legacy]" alongside current ones.
+cross_links:
+  components: components/sayduck-components.yml
+  lifecycle: lifecycle/sayduck-lifecycle.yml
+  changelog: changelog/sayduck-changelog.yml
+  domain_security: security/sayduck-domain-security.yml

@@ -1,0 +1,63 @@
+generated: '2026-07-21'
+method: searched
+source: github.com/Sayduck/sayduck-platform-release/releases (dated release notes)
+name: Sayduck Platform Change Log
+summary: >-
+  Sayduck publishes dated platform release notes in a public GitHub repository.
+  Entries are categorized into New Features, Improvements, API, and Bug Fixes.
+  The most recent dated GitHub release captured is v2.12 (2023-08-29); the repo
+  also carries later tags (up to v4.4.9) without long-form notes.
+scheme: Incrementing platform release (vMAJOR.MINOR)
+source_url: https://github.com/Sayduck/sayduck-platform-release/releases
+current_version: v2.12
+entries:
+- version: v2.12
+  date: '2023-08-29'
+  breaking: false
+  highlights:
+  - '"Download Asset" button added to the 3D Viewer action menu.'
+  - Added API call for dimensions of specified nodes.
+  - Fixed the Dynamic USDZ GraphQL query and preview-image update issues.
+- version: v2.11
+  date: '2023-08-04'
+  breaking: false
+  highlights:
+  - New API call to load and display dimensions for nodes in a scene.
+  - Corrected embed-code background variable quoting; contact-shadow fixes.
+- version: v2.10
+  date: '2023-07-21'
+  breaking: false
+  highlights:
+  - Viewer background-load and HD-render fixes; embed-code plan-gating fix.
+  - Rendering-credit quota and viewer-cache fixes.
+- version: v2.9
+  date: '2023-07-18'
+  breaking: false
+  highlights:
+  - Reworked replacements component ordering and library-material load performance.
+  - Contact-shadow positioning relative to lowest scene Y point.
+- version: v2.8
+  date: '2023-06-16'
+  breaking: false
+  highlights:
+  - Contact shadows and dynamic light shadows.
+  - Stripe billing portal for self-service customer information changes.
+- version: v2.7
+  date: '2023-06-05'
+  breaking: false
+  highlights:
+  - Assign an existing camera position to a variant.
+  - Fixed update3dViewer API call and TRS/mesh-replacement interaction.
+- version: v2.6
+  date: '2023-05-22'
+  breaking: false
+  highlights:
+  - Multi-select of meshes/textures; customizable click-to-load button image.
+- version: v2.5
+  date: '2023-05-08'
+  breaking: false
+  highlights:
+  - Custom QR codes (colors + logo); texture enlarge; drag-and-drop features between variants.
+notes: >-
+  Dates are as published in the GitHub releases feed. A ChangeLog artifact
+  pointer coexists with the release feed URL.

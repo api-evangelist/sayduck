@@ -1,7 +1,26 @@
 aid: sayduck
 name: SayDuck
-description: SayDuck is a company surfaced as a portfolio company of seedcamp and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Sayduck is a 3D product visualization platform for ecommerce that turns static
+  product pages into interactive shopping experiences. Brands upload 3D assets to
+  a self-service platform and embed them as interactive 3D configurators, WebAR
+  (view-in-your-space) experiences, and virtual product photography. The public
+  integration surface is a browser-native Web Component (`<sayduck-viewer>`) with
+  an in-page JavaScript API driven by DOM CustomEvents; the platform is backed by
+  a GraphQL API internally. Founded in 2012 by Niklas Slotte, part of Goodbye
+  Kansas Group 2019-2023, and independent since 2024 via The Optical Foundry.
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://static.wixstatic.com/media/f4f00a_7c822c9db9194c5793d6d732ab9250f7~mv2.png
 url: https://raw.githubusercontent.com/api-evangelist/sayduck/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,10 +30,34 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- 3D
+- Augmented Reality
+- Ecommerce
+- Product Visualization
+- WebAR
+- 3D Configurator
+- Web Components
+apis:
+- name: Sayduck 3D Viewer API
+  description: >-
+    In-page JavaScript API exposed by the embedded Sayduck 3D viewer/configurator
+    Web Component. Accessed via DOM CustomEvents (sayduck.api-ready) once the
+    viewer loads, with namespaces for variants, configurator, and scene control
+    (materials, nodes, cameras, screenshots, WebAR).
+  humanURL: https://help.sayduck.com/en/article/3d-viewer-api-documentation-1ftbxnx/
+  baseURL: https://viewer.sayduck.com
+  properties:
+  - type: APIReference
+    url: https://help.sayduck.com/en/article/3d-viewer-api-documentation-1ftbxnx/
+  - type: Documentation
+    url: https://help.sayduck.com/en/category/api-1t7e7ee/
+  - type: Components
+    url: components/sayduck-components.yml
+  - type: Conventions
+    url: conventions/sayduck-conventions.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -23,3 +66,44 @@ maintainers:
 common:
 - type: Website
   url: http://sayduck.com
+- type: Portal
+  url: https://help.sayduck.com/
+- type: Documentation
+  url: https://help.sayduck.com/
+- type: APIReference
+  url: https://help.sayduck.com/en/article/3d-viewer-api-documentation-1ftbxnx/
+- type: GettingStarted
+  url: https://help.sayduck.com/en/article/getting-started-d0bngy/
+- type: HelpCenter
+  url: https://help.sayduck.com/
+- type: Blog
+  url: https://www.sayduck.com/blog
+- type: Pricing
+  url: https://www.sayduck.com/pricing
+- type: SignUp
+  url: https://platform.sayduck.com/
+- type: TermsOfService
+  url: https://www.sayduck.com/tos
+- type: PrivacyPolicy
+  url: https://www.sayduck.com/privacy-policy
+- type: GitHubOrganization
+  url: https://github.com/Sayduck
+- type: Components
+  url: components/sayduck-components.yml
+- type: Conventions
+  url: conventions/sayduck-conventions.yml
+- type: Lifecycle
+  url: lifecycle/sayduck-lifecycle.yml
+- type: ChangeLog
+  url: https://github.com/Sayduck/sayduck-platform-release/releases
+- type: ChangeLog
+  url: changelog/sayduck-changelog.yml
+- type: LLMsTxt
+  url: llms/sayduck-llms.txt
+- type: DomainSecurity
+  url: security/sayduck-domain-security.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 6
+  pass: local-v1
