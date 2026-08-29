@@ -9,6 +9,17 @@ description: >-
   an in-page JavaScript API driven by DOM CustomEvents; the platform is backed by
   a GraphQL API internally. Founded in 2012 by Niklas Slotte, part of Goodbye
   Kansas Group 2019-2023, and independent since 2024 via The Optical Foundry.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
