@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/sayduck/integrations
+- https://n8n.io/integrations/sayduck/
+- https://composio.dev/toolkits/sayduck
+- https://monid.ai/tools/sayduck
+checked:
+- https://composio.dev/toolkits/sayduck
+- https://monid.ai/tools/sayduck
+- https://n8n.io/integrations/sayduck/
+- https://zapier.com/apps/sayduck/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
